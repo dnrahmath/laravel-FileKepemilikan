@@ -1,8 +1,8 @@
 
-## Web Service - RESTful API - laravel
+# Web Service - RESTful API - laravel
 
 
-#### laravel-passport SetUp
+### laravel-passport SetUp
 
 https://ilmucoding.com/laravel-api-otentikasi-passport/
 https://www.depotkode.com/laravel-passport/
@@ -18,6 +18,12 @@ https://www.depotkode.com/laravel-passport/
 -
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan serve
 -
+
+
+### CRUD Sederhana laravel-FileKepemilikan
+
+
+
 
 <!--
 
