@@ -1,8 +1,11 @@
 
-https://ilmucoding.com/laravel-api-otentikasi-passport/
-
 ## Web Service - RESTful API - laravel
 
+
+#### laravel-passport SetUp
+
+https://ilmucoding.com/laravel-api-otentikasi-passport/
+https://www.depotkode.com/laravel-passport/
 
 ###### saghri@studio:~/github$ composer create-project laravel/laravel laravel-FileKepemilikan
 ###### saghri@studio:~/github$ cd laravel-FileKepemilikan
