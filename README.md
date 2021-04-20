@@ -3,16 +3,17 @@ https://ilmucoding.com/laravel-api-otentikasi-passport/
 
 ## Web Service - RESTful API - laravel
 
-saghri@studio:~/github$ composer create-project laravel/laravel laravel-FileKepemilikan
-saghri@studio:~/github$ cd laravel-FileKepemilikan
-saghri@studio:~/github/laravel-FileKepemilikan$ composer require laravel/passport
+
+######saghri@studio:~/github$ composer create-project laravel/laravel laravel-FileKepemilikan
+######saghri@studio:~/github$ cd laravel-FileKepemilikan
+######saghri@studio:~/github/laravel-FileKepemilikan$ composer require laravel/passport
 -
-saghri@studio:~/github/laravel-FileKepemilikan$ php artisan migrate
+######saghri@studio:~/github/laravel-FileKepemilikan$ php artisan migrate
 php artisan passport::install
 -
-saghri@studio:~/github/laravel-FileKepemilikan$ php artisan make:controller Api/UserController
+######saghri@studio:~/github/laravel-FileKepemilikan$ php artisan make:controller Api/UserController
 -
-saghri@studio:~/github/laravel-FileKepemilikan$ php artisan serve
+######saghri@studio:~/github/laravel-FileKepemilikan$ php artisan serve
 -
 
 <!--
