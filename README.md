@@ -9,7 +9,7 @@ https://ilmucoding.com/laravel-api-otentikasi-passport/
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ composer require laravel/passport
 -
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan migrate
-php artisan passport::install
+###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan passport::install
 -
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan make:controller Api/UserController
 -
