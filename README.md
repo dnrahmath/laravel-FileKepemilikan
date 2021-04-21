@@ -5,8 +5,8 @@
 +
 ### laravel-passport SetUp
 
-[X] https://ilmucoding.com/laravel-api-otentikasi-passport/
-[X] https://www.depotkode.com/laravel-passport/
+. https://ilmucoding.com/laravel-api-otentikasi-passport/ .
+. https://www.depotkode.com/laravel-passport/ .
 
 ###### saghri@studio:~/github$ composer create-project laravel/laravel laravel-FileKepemilikan
 ###### saghri@studio:~/github$ cd laravel-FileKepemilikan
