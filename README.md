@@ -1,31 +1,28 @@
-<!--
 
 # Web Service - RESTful API - laravel
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Vehikl](https://vehikl.com/)**
 
 ### laravel-passport SetUp
 
 ##### https://ilmucoding.com/laravel-api-otentikasi-passport/ 
 ##### https://www.depotkode.com/laravel-passport/ 
-
++
 ###### saghri@studio:~/github$ composer create-project laravel/laravel laravel-FileKepemilikan
 ###### saghri@studio:~/github$ cd laravel-FileKepemilikan
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ composer require laravel/passport
--
++
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan migrate
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan passport::install
--
++
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan make:controller Api/UserController
--
++
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan serve
 
 
 
 ### CRUD Sederhana laravel-FileKepemilikan
 
--->
+
 
 
 
@@ -39,7 +36,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
--->
+
 
 ## Web Service - RESTful API - laravel
 
@@ -98,5 +95,5 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-
+-->
 
