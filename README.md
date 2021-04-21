@@ -5,8 +5,8 @@
 +
 ### laravel-passport SetUp
 
-. https://ilmucoding.com/laravel-api-otentikasi-passport/ .
-. https://www.depotkode.com/laravel-passport/ .
+##### https://ilmucoding.com/laravel-api-otentikasi-passport/ 
+##### https://www.depotkode.com/laravel-passport/ 
 
 ###### saghri@studio:~/github$ composer create-project laravel/laravel laravel-FileKepemilikan
 ###### saghri@studio:~/github$ cd laravel-FileKepemilikan
@@ -18,9 +18,8 @@
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan make:controller Api/UserController
 -
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan serve
--
-+
-+
+
+
 
 ### CRUD Sederhana laravel-FileKepemilikan
 
