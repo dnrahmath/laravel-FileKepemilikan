@@ -2,6 +2,16 @@
 # Web Service - RESTful API - laravel
 
 -----------------------------------------------------------------------
+### Model laravel
+#### Migration-laravel
+
+##### https://www.malasngoding.com/migration-laravel/
+##### 
++
+
+
+
+-----------------------------------------------------------------------
 ### laravel-passport SetUp
 
 ##### https://ilmucoding.com/laravel-api-otentikasi-passport/ 
@@ -22,9 +32,11 @@
 -----------------------------------------------------------------------
 
 ### CRUD Sederhana laravel-FileKepemilikan
+#### Resource Controller Laravel 
 
-
-
+##### https://www.laravel.web.id/2017/10/17/memanfaatkan-fitur-controller-resource-laravel/
+##### 
++
 
 
 
