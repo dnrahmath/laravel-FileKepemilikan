@@ -6,9 +6,13 @@
 #### Migration-laravel
 
 ##### https://www.malasngoding.com/migration-laravel/
-##### 
+##### https://laravel-guide.readthedocs.io/en/latest/migrations/
 +
-
+###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan make:migration create_userFileKepemilikan_table
++
+###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan migrate
+###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan migrate:refresh
++
 
 
 -----------------------------------------------------------------------
