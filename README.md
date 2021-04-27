@@ -41,9 +41,16 @@
 ###### http://127.0.0.1:8000/api/auth/register?name=iniAdminEmpat&email=adminEmpat@mail.com&password=adminEmpat
 +
 +
-###### ~saghri@studio:~/github/laravel-FileKepemilikan$ php artisan passport:client --personal~
-###### + [ENTER]
-###### ~saghri@studio:~/github/laravel-FileKepemilikan$ php artisan passport:install --personal~
+##### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan migrate:refresh
+###### /* mereset termasuk passportnya */
+##### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan passport:client --personal
+###### /* membuat client passportnya kembali */
+##### + [ENTER]
+##### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan serve
+###### /* menyalakan Server */
++
++
+###### ~saghri@studio:~/github/laravel-FileKepemilikan$ php artisan passport:install~
 ###### + [ENTER]
 +
 
