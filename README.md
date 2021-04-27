@@ -12,6 +12,7 @@
 +
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan migrate
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan migrate:refresh
+###### { Ketika Melakukan migrate:refresh - data didalamnya hilang }
 +
 
 
@@ -31,7 +32,20 @@
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan make:controller Api/UserController
 +
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan serve
-
++
++
+###### http://127.0.0.1:8000/api/auth/login
+###### http://127.0.0.1:8000/api/auth/login?email=adminEmpat@mail.com&password=adminEmpat
++
+###### http://127.0.0.1:8000/api/auth/register
+###### http://127.0.0.1:8000/api/auth/register?name=iniAdminEmpat&email=adminEmpat@mail.com&password=adminEmpat
++
++
+###### ~saghri@studio:~/github/laravel-FileKepemilikan$ php artisan passport:client --personal~
+###### + [ENTER]
+###### ~saghri@studio:~/github/laravel-FileKepemilikan$ php artisan passport:install --personal~
+###### + [ENTER]
++
 
 -----------------------------------------------------------------------
 
