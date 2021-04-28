@@ -50,10 +50,12 @@
 ###### /* menyalakan Server */
 +
 +
-###### ~saghri@studio:~/github/laravel-FileKepemilikan$ php artisan passport:install~
+###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan passport:install
 ###### + [ENTER]
 +
 
+.-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+###### antara garis
 -----------------------------------------------------------------------
 
 ### CRUD Sederhana laravel-FileKepemilikan
