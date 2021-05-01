@@ -47,9 +47,10 @@
 ##### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan passport:client --personal
 ###### /* membuat client passportnya kembali */
 ##### + [ENTER]
+###### .-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 ##### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan serve
 ###### /* menyalakan Server */
-+
+###### .-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 +
 ###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan passport:install
 ###### + [ENTER]
