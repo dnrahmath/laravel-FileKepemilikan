@@ -43,7 +43,7 @@
 +
 ###### .-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 ##### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan migrate:refresh
-###### /* mereset termasuk passportnya */
+###### /* mengulangi migrate keseluruhan  --  mereset termasuk passportnya [2] */
 ##### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan passport:client --personal
 ###### /* membuat client passportnya kembali */
 ##### + [ENTER]
@@ -84,9 +84,16 @@
 ###### Sumber : Buku Laravel 5 AWAN PRIBADI BASUKI
 ###### -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-##### https://www.phpcodingstuff.com/blog/laravel-8-rest-api-crud-with-passport-auth-tutorial.html
-##### Step 6
-###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan make:controller userFileKepemilikanController --resource
+#### https://www.phpcodingstuff.com/blog/laravel-8-rest-api-crud-with-passport-auth-tutorial.html
+#### Step 6
+##### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan make:model userFileKepemilikan -m
+###### /* membuat model dan membuat migrasinya , tapi belum ke eksecute ke database */
+##### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan make:controller userFileKepemilikanController --resource
+###### /* membuat controller dengan resource CRUD bawaan laravel */
+##### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan migrate
+###### /* melakukan migrate bagi file yg belum di migrate [3]*/
+##### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan migrate:rollback
+###### /*mengupdate kembali migrate, ketika manual hapus migration, jangan lupa hapus di nama migraration di phpmyadmin [1]*/
 
 ------------------------------------------------------------------------------------------------
 
