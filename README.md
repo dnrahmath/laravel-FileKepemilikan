@@ -73,15 +73,15 @@
 ###### antara garis
 
 <!-- | :--: |    :--:    | :---------------------: | :------: | :----------------: | -->
-|  No  |    VERB    |           PATH          |  ACTION  |     ROUTE NAME     |
-| :--: |    :--:    |  ---------------------- | :------: | ------------------ |
-|  1   | `GET`      | /siswa                  |  index   | siswa.index        |
-|  2   | `GET`      | /siswa/create           |  create  | siswa.create       |
-|  3   | `POST`     | /siswa                  |  store   | siswa.store        |
-|  4   | `GET`      | /siswa/{siswa}          |  show    | siswa.show         |
-|  5   | `GET`      | /siswa/{siswa}/edit     |  edit    | siswa.edit         |
-|  6   | `PUT/PATCH`| /siswa/{siswa}          |  update  | siswa.update       |
-|  7   | `DELETE`   | /siswa/{siswa}          |  destroy | siswa.destroy      |
+|  No  |    VERB    |           PATH          |    ACTION    |     ROUTE NAME     |
+| :--: |    :--:    |  ---------------------- |   :------:   | ------------------ |
+|  1   | `GET`      | /siswa                  |    index     | siswa.index        |
+|  2   | `GET`      | /siswa/create           |    create    | siswa.create       |
+|  3   | `POST`     | /siswa                  |    store     | siswa.store        |
+|  4   | `GET`      | /siswa/{siswa}          |    show      | siswa.show         |
+|  5   | `GET`      | /siswa/{siswa}/edit     |    edit      | siswa.edit         |
+|  6   | `PUT/PATCH`| /siswa/{siswa}          |    update    | siswa.update       |
+|  7   | `DELETE`   | /siswa/{siswa}          |    destroy   | siswa.destroy      |
 <!-- |------|------------|-------------------------|----------|--------------------| -->
 ###### siswaku/routes/web.php   ---   nanti coba diuji pakai api.php
 ###### Route::resource('siswa','SiswaController');
