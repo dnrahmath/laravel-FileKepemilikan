@@ -66,7 +66,8 @@
 
 ##### https://www.laravel.web.id/2017/10/17/memanfaatkan-fitur-controller-resource-laravel/
 ##### Table RESTful Resource Controller :
-|------|------------|-------------------------|----------|--------------------|
+#####
+<!-- |------|------------|-------------------------|----------|--------------------| -->
 |  No  |    VERB    |           PATH          |  ACTION  |     ROUTE NAME     |
 |------|------------|-------------------------|----------|--------------------|
 |  1   | GET        | /siswa                  |  index   | siswa.index        |
@@ -76,7 +77,7 @@
 |  5   | GET        | /siswa/{siswa}/edit     |  edit    | siswa.edit         |
 |  6   | PUT/PATCH  | /siswa/{siswa}          |  update  | siswa.update       |
 |  7   | DELETE     | /siswa/{siswa}          |  destroy | siswa.destroy      |
-|------|------------|-------------------------|----------|--------------------|
+<!-- |------|------------|-------------------------|----------|--------------------| -->
 ###### Sumber : Buku Laravel 5 AWAN PRIBADI BASUKI
 
 <!--
