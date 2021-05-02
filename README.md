@@ -84,6 +84,8 @@
 ###### Sumber : Buku Laravel 5 AWAN PRIBADI BASUKI
 ###### -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
+###### https://www.phpcodingstuff.com/blog/laravel-8-rest-api-crud-with-passport-auth-tutorial.html
+###### Step 6
 
 ------------------------------------------------------------------------------------------------
 
