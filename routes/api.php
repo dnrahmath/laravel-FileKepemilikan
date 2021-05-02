@@ -25,6 +25,11 @@ Route::prefix('auth')->group(function(){
     Route::post('register', 'AuthController@register');
     Route::group(['middleware' => 'auth:api'], function(){
         Route::get('user', 'AuthController@profile');
+
+        //Route::post('file-simpan', 'userFileKepemilikanController@store');
+        //Route::put('file-update', 'userFileKepemilikanController@update');
+        Route::resource('file-crud', 'userFileKepemilikanController');
+
         Route::get('logout', 'AuthController@logout');
     });
     
