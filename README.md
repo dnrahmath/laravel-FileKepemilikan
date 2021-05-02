@@ -65,10 +65,19 @@
 #### Resource Controller Laravel 
 
 ##### https://www.laravel.web.id/2017/10/17/memanfaatkan-fitur-controller-resource-laravel/
-##### 
-+
-
-
+##### Table RESTful Resource Controller :
++------+------------+-------------------------+----------+--------------------+
+|  No  |    VERB    |           PATH          |  ACTION  |     ROUTE NAME     |
++------+------------+-------------------------+----------+--------------------+
+|  1   | GET        | /siswa                  |  index   | siswa.index        |
+|  2   | GET        | /siswa/create           |  create  | siswa.create       |
+|  3   | POST       | /siswa                  |  store   | siswa.store        |
+|  4   | GET        | /siswa/{siswa}          |  show    | siswa.show         |
+|  5   | GET        | /siswa/{siswa}/edit     |  edit    | siswa.edit         |
+|  6   | PUT/PATCH  | /siswa/{siswa}          |  update  | siswa.update       |
+|  7   | DELETE     | /siswa/{siswa}          |  destroy | siswa.destroy      |
++------+------------+-------------------------+----------+--------------------+
+###### Sumber : Buku Laravel 5 AWAN PRIBADI BASUKI
 
 <!--
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
