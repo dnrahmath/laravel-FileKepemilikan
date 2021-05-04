@@ -96,15 +96,15 @@
 ###### /*mengupdate kembali migrate, ketika manual hapus migration, jangan lupa hapus di nama migraration di phpmyadmin [1]*/
 
 ------------------------------------------------------------------------------------------------
-### https://www.itsolutionstuff.com/post/laravel-8-file-upload-example-tutorialexample.html
-### https://www.nicesnippets.com/blog/laravel-8-file-upload-example
-### https://www.phpcodingstuff.com/blog/laravel-8-rest-api-crud-with-passport-auth-tutorial.html
-### --
-### https://www.malasngoding.com/membuat-upload-file-laravel/
-### https://stackoverflow.com/questions/40033879/handling-file-upload-in-laravels-controller/40033934
-### --
-### https://stackoverflow.com/questions/39037049/how-to-upload-a-file-and-json-data-in-postman
-#### https://stackoverflow.com/questions/60558645/laravel-validation-based-on-a-variable
+##### https://www.itsolutionstuff.com/post/laravel-8-file-upload-example-tutorialexample.html
+##### https://www.nicesnippets.com/blog/laravel-8-file-upload-example
+##### https://www.phpcodingstuff.com/blog/laravel-8-rest-api-crud-with-passport-auth-tutorial.html
+##### --
+##### https://www.malasngoding.com/membuat-upload-file-laravel/
+##### https://stackoverflow.com/questions/40033879/handling-file-upload-in-laravels-controller/40033934
+##### --
+##### https://stackoverflow.com/questions/39037049/how-to-upload-a-file-and-json-data-in-postman
+###### https://stackoverflow.com/questions/60558645/laravel-validation-based-on-a-variable
 
 
 
