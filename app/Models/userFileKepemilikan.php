@@ -2,6 +2,10 @@
 
 namespace App\Models;
 
+
+use Laravel\Passport\HasApiTokens; //------------------- jgn lupa
+use Illuminate\Notifications\Notifiable; //------------- jgn lupa
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
