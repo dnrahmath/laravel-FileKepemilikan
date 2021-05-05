@@ -105,6 +105,9 @@
 ##### --
 ##### https://stackoverflow.com/questions/39037049/how-to-upload-a-file-and-json-data-in-postman
 ###### https://stackoverflow.com/questions/60558645/laravel-validation-based-on-a-variable
+##### --
+##### https://kursuswebprogramming.com/cara-menampilkan-semua-data-dengan-menggunakan-restful-api-pada-laravel/
+###### saghri@studio:~/github/laravel-FileKepemilikan$ php artisan make:resource userFileKepemilikan
 
 
 

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 use App\Models\userFileKepemilikan;  //--------------- pakai ini
+use App\Http\Resources\userFileKepemilikan as userFileKepemilikanResources;  //--------------- Resource untuk get
 
 use Validator; //----------------- jgn lupa
 
@@ -20,9 +21,15 @@ class userFileKepemilikanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index()    // [GET] ------------------------- menampilkan seluruh isi userFileKepemilikan
     {
         //
+        $dataFileKepemilikan = userFileKepemilikan::all();
+        return response()->json([
+        "success" => true,
+        "message" => "Product List",
+        "data" => $dataFileKepemilikan
+        ]);
     }
 
     /**
@@ -30,9 +37,11 @@ class userFileKepemilikanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create()    // [GET] ------------------------- menampilkan seluruh isi userFileKepemilikan untuk membuat resource baru
     {
         //
+        $get_all_data = userFileKepemilikan::orderBy('id','DESC')->get();  // pengurutan dari yang terbesar
+        return userFileKepemilikanResources::collection($get_all_data);
     }
 
     /**
@@ -41,8 +50,9 @@ class userFileKepemilikanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request)    // [POST] ------------------------- Melakukan input ke database
     {
+        //
         //menyiapkan request untuk disimpan ke array input
         $input = $request->all();
 
@@ -65,9 +75,9 @@ class userFileKepemilikanController extends Controller
             'data' => 'required|file|mimes:jpg,jpeg,bmp,png,doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip'
         ]);
          if($validator->fails()){
-         return $this->sendError('Validation Error.', $validator->errors());       
+            return $this->sendError('Validation Error.', $validator->errors());       
          }
-
+         
         //----------------------------------------------------------------------------
 
         $dataFileKepemilikan = userFileKepemilikan::create($input);
@@ -90,9 +100,18 @@ class userFileKepemilikanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id)    //-------------------------menampilkan id tertentu  yang dipilih dari isi userFileKepemilikan
     {
         //
+        if (userFileKepemilikan::where('id', $id)->exists()) {
+            //$dataFileKepemilikan = userFileKepemilikan::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT); //kalau mau bentuk JSON Rapih
+            $dataFileKepemilikan = userFileKepemilikan::where('id', $id)->get();
+            return response($dataFileKepemilikan, 200);
+          } else {
+            return response()->json([
+              "message" => "Data tidak ditemukan atau sudah dihapus"
+            ], 404);
+          }
     }
 
     /**
@@ -101,9 +120,18 @@ class userFileKepemilikanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id)  //------------------ mirip kyk create tapi lebih specifict , yang membedakan route GET - apinya
     {
         //
+        if (userFileKepemilikan::where('id', $id)->exists()) {
+            //$dataFileKepemilikan = userFileKepemilikan::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT); //kalau mau bentuk JSON Rapih
+            $dataFileKepemilikan = userFileKepemilikan::where('id', $id)->get();
+            return response($dataFileKepemilikan, 200);
+          } else {
+            return response()->json([
+              "message" => "Data tidak ditemukan atau sudah dihapus"
+            ], 404);
+          }
     }
 
     /**
@@ -116,6 +144,27 @@ class userFileKepemilikanController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $input = $request->all();
+
+        $file = $request->file('data');  //nama dari uploadan file
+        //$input['mime'] = $file->getMimeType();
+        //$input['data'] = $file->getClientOriginalName();
+
+        //----------------------------------------------------------------------------
+
+        $validator = Validator::make($input, [
+            'namaPemilik' => 'required',
+            'mime' => 'required',
+            'data' => 'required|file|mimes:jpg,jpeg,bmp,png,doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip'
+        ]);
+         if($validator->fails()){
+            return response()->json([
+                "message" => "500 - Internal Server Error - Validator fails"
+              ], 500);     
+         }
+         
+        //----------------------------------------------------------------------------
     }
 
     /**
@@ -127,5 +176,22 @@ class userFileKepemilikanController extends Controller
     public function destroy($id)
     {
         //
+        //$dataFileKepemilikan = userFileKepemilikan::findOrFail($id);
+        if(userFileKepemilikan::where('id', $id)->exists()) {
+            $dataFileKepemilikan = userFileKepemilikan::findOrFail($id);
+            $dataFileKepemilikan->delete();
+    
+            return response()->json([
+              "message" => "dataFileKepemilikan records deleted"
+            ], 202);
+        } else {
+            return response()->json([
+              "message" => "id dataFileKepemilikan not found"
+            ], 404);
+        }
     }
+
+
+
+
 }
