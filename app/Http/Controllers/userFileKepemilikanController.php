@@ -144,19 +144,37 @@ class userFileKepemilikanController extends Controller
     public function update(Request $request, $id)
     {
         //
-
+        $dataFileKepemilikan = userFileKepemilikan::findOrFail($id);
         $input = $request->all();
 
-        $file = $request->file('data');  //nama dari uploadan file
+        //$file = $request->input('data');
+        //$file = $request->file('data');  //nama dari uploadan file
         //$input['mime'] = $file->getMimeType();
         //$input['data'] = $file->getClientOriginalName();
+
+        if ($request->hasFile('data'))
+        {
+          //
+          $input['mime'] = $file->getMimeType();
+          $input['data'] = $file->getClientOriginalName();
+        }
+        else 
+        {
+          return response()->json([
+            "message" => "fle-uplod bernama 'data' tidak terinput"
+          ], 404);
+        }
+
 
         //----------------------------------------------------------------------------
 
         $validator = Validator::make($input, [
             'namaPemilik' => 'required',
-            'mime' => 'required',
+            'mime' => 'required|file',
             'data' => 'required|file|mimes:jpg,jpeg,bmp,png,doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip'
+        
+            //'mime' => 'required' . $request->input('data')->getMimeType(),
+            //'data' => 'required|file|mimes:jpg,jpeg,bmp,png,doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip' . $request->input('data')->getClientOriginalName()
         ]);
          if($validator->fails()){
             return response()->json([
@@ -165,6 +183,8 @@ class userFileKepemilikanController extends Controller
          }
          
         //----------------------------------------------------------------------------
+
+        $dataFileKepemilikan->update($input);
     }
 
     /**
