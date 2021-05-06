@@ -152,8 +152,8 @@ class userFileKepemilikanController extends Controller
         //$input['mime'] = $file->getMimeType();
         //$input['data'] = $file->getClientOriginalName();
 
-        if ($request->hasFile('data'))
-        {
+        //if ($request->file('photo')->isValid()) {
+        if ($request->hasFile('data')){
           //
           $input['mime'] = $file->getMimeType();
           $input['data'] = $file->getClientOriginalName();
@@ -161,7 +161,11 @@ class userFileKepemilikanController extends Controller
         else 
         {
           return response()->json([
-            "message" => "fle-uplod bernama 'data' tidak terinput"
+            "message" => "fle-uplod bernama 'data' tidak terinput",
+            "FILES" => $_FILES,
+            'RequestAll' => $request->all(),
+            'isiText' => $request->input('namaPemilik'),
+            'isiFile' => $request->file('data')
           ], 404);
         }
 

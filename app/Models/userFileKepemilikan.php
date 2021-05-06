@@ -17,6 +17,8 @@ class userFileKepemilikan extends Model
     //protected $table = 'userFileKepemilikan';   // bila di table saat migration atau lainnya akan ditambah belakang s secara default
 
     protected $fillable = [
-        'namaPemilik', 'mime', 'data'
+        'namaPemilik', 
+        'mime', 
+        'data',
     ];
 }
