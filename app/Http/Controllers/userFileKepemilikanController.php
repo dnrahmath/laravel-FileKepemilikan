@@ -148,30 +148,32 @@ class userFileKepemilikanController extends Controller
         $input = $request->all();
 
         //$file = $request->input('data');
-        //$file = $request->file('data');  //nama dari uploadan file
         //$input['mime'] = $file->getMimeType();
         //$input['data'] = $file->getClientOriginalName();
 
         //if ($request->file('photo')->isValid()) {
         if ($request->hasFile('data')){
           //
-          $input['mime'] = $file->getMimeType();
-          $input['data'] = $file->getClientOriginalName();
+          $file = $request->file('data');  //nama dari uploadan file
+          //$file_exten = $file->getClientOriginalExtension();
+          if ($request->file('data')->isValid()) {
+            //nama file extention
+            $input['mime'] = $file->getMimeType();
+            $input['data'] = $file->getClientOriginalName();
+          }
+          
         }
         else 
         {
           return response()->json([
             "message" => "fle-uplod bernama 'data' tidak terinput",
-            "FILES" => $_FILES,
+            "_FILES" => $_FILES,
             'RequestAll' => $request->all(),
             'isiText' => $request->input('namaPemilik'),
             'isiFile' => $request->file('data')
           ], 404);
         }
-
-
         //----------------------------------------------------------------------------
-
         $validator = Validator::make($input, [
             'namaPemilik' => 'required',
             'mime' => 'required|file',
@@ -185,9 +187,7 @@ class userFileKepemilikanController extends Controller
                 "message" => "500 - Internal Server Error - Validator fails"
               ], 500);     
          }
-         
         //----------------------------------------------------------------------------
-
         $dataFileKepemilikan->update($input);
     }
 
