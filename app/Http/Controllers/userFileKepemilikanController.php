@@ -147,21 +147,36 @@ class userFileKepemilikanController extends Controller
         $dataFileKepemilikan = userFileKepemilikan::findOrFail($id);
         $input = $request->all();
 
-        //$file = $request->input('data');
-        //$input['mime'] = $file->getMimeType();
-        //$input['data'] = $file->getClientOriginalName();
+        $file_mime = $_FILES["data"]["type"];
+        $file_data = $_FILES["data"]["tmp_name"];
+        
+        //$input['mime'] = $file_mime;
+        //$input['data'] = $file_data;
+        
+        //-masih error
+        $input =
+          [
+            "namaPemilik" => $request->input('namaPemilik'),
+            "mime" => $file_mime,
+            "data" => $file_data
+          ];
+        
 
-        //if ($request->file('photo')->isValid()) {
+        /*
+        $input =
+          {
+            "namaPemilik :" . $request->input('namaPemilik'),
+            "mime :" . $file_mime,
+            "data :" . $file_data
+          };
+        */
+        
+        /*
         if ($request->hasFile('data')){
           //
-          $file = $request->file('data');  //nama dari uploadan file
-          //$file_exten = $file->getClientOriginalExtension();
           if ($request->file('data')->isValid()) {
-            //nama file extention
-            $input['mime'] = $file->getMimeType();
-            $input['data'] = $file->getClientOriginalName();
+            //
           }
-          
         }
         else 
         {
@@ -173,22 +188,41 @@ class userFileKepemilikanController extends Controller
             'isiFile' => $request->file('data')
           ], 404);
         }
+        */
+
         //----------------------------------------------------------------------------
-        $validator = Validator::make($input, [
+        $validator = Validator::make($input, [ //--input json 
             'namaPemilik' => 'required',
-            'mime' => 'required|file',
-            'data' => 'required|file|mimes:jpg,jpeg,bmp,png,doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip'
+            'mime' => 'required|file' ,
+            'data' => 'required|file|mimes:jpg,jpeg,bmp,png,doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip' 
         
             //'mime' => 'required' . $request->input('data')->getMimeType(),
             //'data' => 'required|file|mimes:jpg,jpeg,bmp,png,doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip' . $request->input('data')->getClientOriginalName()
         ]);
          if($validator->fails()){
             return response()->json([
-                "message" => "500 - Internal Server Error - Validator fails"
+                "message" => "500 - Internal Server Error - Validator fails",
+                "_FILES" => $_FILES,
+                'RequestAll' => $request->all(),
+                'isiText' => $request->input('namaPemilik'),
+                'isiFile' => $request->file('data'),
+                'ManualFileMime' => $file_mime,
+                'ManualFileData' => $file_data,
+                'input' => $input
               ], 500);     
          }
         //----------------------------------------------------------------------------
         $dataFileKepemilikan->update($input);
+        /*
+        $dataFileKepemilikan->update()->json(
+          [
+            "namaPemilik" => $request->input('namaPemilik'),
+            "mime" => $file_mime,
+            "data" => $file_data
+          ]
+        );
+        */
+
     }
 
     /**
