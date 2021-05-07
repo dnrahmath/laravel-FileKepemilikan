@@ -143,34 +143,25 @@ class userFileKepemilikanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
         $dataFileKepemilikan = userFileKepemilikan::findOrFail($id);
         $input = $request->all();
 
         $file_mime = $_FILES["data"]["type"];
         $file_data = $_FILES["data"]["tmp_name"];
         
-        //$input['mime'] = $file_mime;
-        //$input['data'] = $file_data;
         
-        //-masih error
-        $input =
+        $inputArrayIn =
           [
             "namaPemilik" => $request->input('namaPemilik'),
             "mime" => $file_mime,
             "data" => $file_data
           ];
-        
+          
+        //$inputEncJson = json_encode($input);
+        //$inputDecJson = json_decode($inputEncJson);
 
-        /*
-        $input =
-          {
-            "namaPemilik :" . $request->input('namaPemilik'),
-            "mime :" . $file_mime,
-            "data :" . $file_data
-          };
-        */
-        
+
         /*
         if ($request->hasFile('data')){
           //
@@ -191,37 +182,43 @@ class userFileKepemilikanController extends Controller
         */
 
         //----------------------------------------------------------------------------
-        $validator = Validator::make($input, [ //--input json 
+        $validator = Validator::make($inputArrayIn, [ //--input json 
             'namaPemilik' => 'required',
-            'mime' => 'required|file' ,
-            'data' => 'required|file|mimes:jpg,jpeg,bmp,png,doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip' 
+            'mime' => 'required' ,
+            'data' => 'required' 
+            //syarat validationnya dikurangi !!!
         
             //'mime' => 'required' . $request->input('data')->getMimeType(),
             //'data' => 'required|file|mimes:jpg,jpeg,bmp,png,doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip' . $request->input('data')->getClientOriginalName()
         ]);
          if($validator->fails()){
             return response()->json([
-                "message" => "500 - Internal Server Error - Validator fails",
+                "message" => "500 - Internal Server Error - Validator gagal",
                 "_FILES" => $_FILES,
                 'RequestAll' => $request->all(),
                 'isiText' => $request->input('namaPemilik'),
                 'isiFile' => $request->file('data'),
                 'ManualFileMime' => $file_mime,
                 'ManualFileData' => $file_data,
-                'input' => $input
+                'input' => $inputArrayIn,
+                //'dd()' => dd($inputArrayIn)
               ], 500);     
          }
         //----------------------------------------------------------------------------
-        $dataFileKepemilikan->update($input);
-        /*
-        $dataFileKepemilikan->update()->json(
-          [
-            "namaPemilik" => $request->input('namaPemilik'),
-            "mime" => $file_mime,
-            "data" => $file_data
-          ]
-        );
-        */
+        if($dataFileKepemilikan->update($inputArrayIn)){
+          return response()->json([
+            "message" => "SELAMAT SUKSES TERUPDATE !!!!!",
+            "_FILES" => $_FILES,
+            'RequestAll' => $request->all(),
+            'isiText' => $request->input('namaPemilik'),
+            'isiFile' => $request->file('data'),
+            'ManualFileMime' => $file_mime,
+            'ManualFileData' => $file_data,
+            'input' => $inputArrayIn,
+            'dd()' => dd($inputArrayIn)
+          ], 200);
+        }
+
 
     }
 
