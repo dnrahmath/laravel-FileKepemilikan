@@ -68,18 +68,18 @@
 ##### Table RESTful Resource Controller :
 
 <!-- | :--: |    :--:    | :---------------------: | :------: | :----------------: | -->
-|  No  |    VERB    |              PATH             |    ACTION    |     ROUTE NAME     |                  REQUEST NAME                |            TYPE ACTION            |
-| :--: |    :--:    |     ----------------------    |   :------:   | ------------------ |               ------------------             |              :------:             |
-|  1   | `POST`     | /api/auth/register            |    register  | siswa.index        | ['register'] /api/auth/register                |                                   |
-|  2   | `POST`     | /api/auth/login               |    login     | siswa.create       | ['login'] /api/auth/login                      |                                   |
-|  3   | `POST`     | /api/auth/file-crud           |    store     | siswa.store        | ['store'] /api/auth/file-crud                  |                                   |
-|  1   | `GET`      | /api/auth/file-crud           |    index     | siswa.index        | ['index'][-R-] /api/auth/file-crud             |         [ -R- Data Awal]          |
-|  2   | `GET`      | /api/auth/file-crud/create    |    create    | siswa.create       | ['create'][-R-] /api/auth/file-crud/create     | [ -R-After store/update by table] |
-|  4   | `GET`      | /api/auth/file-crud/{id}      |    show      | siswa.show         | ['show'][-R-id-] /api/auth/file-crud/{id}      |       [ -R-id- specifict ]        |
-|  5   | `GET`      | /api/auth/file-crud/{id}/edit |    edit      | siswa.edit         | ['edit'][-R-id-] /api/auth/file-crud/{id}/edit |      [ -R-id-Before update ]      |
-|  7   | `DELETE`   | /api/auth/file-crud/{id}      |    destroy   | siswa.destroy      | ['delete'] /api/auth/file-crud/{id}            |                                   |
-|  6   | `PUT`      | /api/auth/file-crud/{id}      |    update    | siswa.update       | ['PUT-update'] /api/auth/file-crud/{id}        |                                   |
-|  6   | `PATCH`    | /api/auth/file-crud/{id}      |    update    | siswa.update       | ['PATCH-update'] /api/auth/file-crud/{id}      |                                   |
+|  No  |    VERB    |              PATH             |     ACTION     |     ROUTE NAME     |                  REQUEST NAME                |            TYPE ACTION            |
+| :--: |    :--:    |     ----------------------    |    :------:    | ------------------ |               ------------------             |              :------:             |
+|  1   | `POST`     | /api/auth/register            |    `register`  | siswa.index        | [`register`] /api/auth/register                |                                   |
+|  2   | `POST`     | /api/auth/login               |    `login`     | siswa.create       | [login] /api/auth/login                      |                                   |
+|  3   | `POST`     | /api/auth/file-crud           |    `store`     | siswa.store        | [store] /api/auth/file-crud                  |                                   |
+|  1   | `GET`      | /api/auth/file-crud           |    `index`     | siswa.index        | [index][-R-] /api/auth/file-crud             |         [ -R- Data Awal]          |
+|  2   | `GET`      | /api/auth/file-crud/create    |    `create`    | siswa.create       | [create][-R-] /api/auth/file-crud/create     | [ -R-After store/update by table] |
+|  4   | `GET`      | /api/auth/file-crud/{id}      |    `show`      | siswa.show         | [show][-R-id-] /api/auth/file-crud/{id}      |       [ -R-id- specifict ]        |
+|  5   | `GET`      | /api/auth/file-crud/{id}/edit |    `edit`      | siswa.edit         | [edit][-R-id-] /api/auth/file-crud/{id}/edit |      [ -R-id-Before update ]      |
+|  7   | `DELETE`   | /api/auth/file-crud/{id}      |    `destroy`   | siswa.destroy      | [delete] /api/auth/file-crud/{id}            |                                   |
+|  6   | `PUT`      | /api/auth/file-crud/{id}      |    `update`    | siswa.update       | [PUT-update] /api/auth/file-crud/{id}        |                                   |
+|  6   | `PATCH`    | /api/auth/file-crud/{id}      |    `update`    | siswa.update       | [PATCH-update] /api/auth/file-crud/{id}      |                                   |
 
 
 <!-- |------|------------|-------------------------|----------|--------------------| -->
