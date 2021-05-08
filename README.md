@@ -70,7 +70,7 @@
 <!-- | :--: |    :--:    | :---------------------: | :------: | :----------------: | -->
 |  No  |    VERB    |              PATH             |     ACTION     |     ROUTE NAME     |                  REQUEST NAME                |            TYPE ACTION            |
 | :--: |    :--:    |     ----------------------    |    :------:    | ------------------ |               ------------------             |              :------:             |
-|  1   | `POST`     | /api/auth/register            |    `register`  | siswa.index        | [`register`] /api/auth/register                |                                   |
+|  1   | `POST`     | /api/auth/register            |    `register`  | siswa.index        | [ `register` ] /api/auth/register                |                                   |
 |  2   | `POST`     | /api/auth/login               |    `login`     | siswa.create       | [login] /api/auth/login                      |                                   |
 |  3   | `POST`     | /api/auth/file-crud           |    `store`     | siswa.store        | [store] /api/auth/file-crud                  |                                   |
 |  1   | `GET`      | /api/auth/file-crud           |    `index`     | siswa.index        | [index][-R-] /api/auth/file-crud             |         [ -R- Data Awal]          |
