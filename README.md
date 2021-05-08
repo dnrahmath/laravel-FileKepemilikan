@@ -68,15 +68,20 @@
 ##### Table RESTful Resource Controller :
 
 <!-- | :--: |    :--:    | :---------------------: | :------: | :----------------: | -->
-|  No  |    VERB    |           PATH          |    ACTION    |     ROUTE NAME     |
-| :--: |    :--:    |  ---------------------- |   :------:   | ------------------ |
-|  1   | `GET`      | /siswa                  |    index     | siswa.index        |
-|  2   | `GET`      | /siswa/create           |    create    | siswa.create       |
-|  3   | `POST`     | /siswa                  |    store     | siswa.store        |
-|  4   | `GET`      | /siswa/{siswa}          |    show      | siswa.show         |
-|  5   | `GET`      | /siswa/{siswa}/edit     |    edit      | siswa.edit         |
-|  6   | `PUT/PATCH`| /siswa/{siswa}          |    update    | siswa.update       |
-|  7   | `DELETE`   | /siswa/{siswa}          |    destroy   | siswa.destroy      |
+|  No  |    VERB    |              PATH             |    ACTION    |     ROUTE NAME     |                  REQUEST NAME                |            TYPE ACTION            |
+| :--: |    :--:    |     ----------------------    |   :------:   | ------------------ |               ------------------             |              :------:             |
+|  1   | `POST`     | /api/auth/register            |    register  | siswa.index        | [register] /api/auth/register                |                                   |
+|  2   | `POST`     | /api/auth/login               |    login     | siswa.create       | [login] /api/auth/login                      |                                   |
+|  3   | `POST`     | /api/auth/file-crud           |    store     | siswa.store        | [store] /api/auth/file-crud                  |                                   |
+|  1   | `GET`      | /api/auth/file-crud           |    index     | siswa.index        | [index][-R-] /api/auth/file-crud             |         [ -R- Data Awal]          |
+|  2   | `GET`      | /api/auth/file-crud/create    |    create    | siswa.create       | [create][-R-] /api/auth/file-crud/create     | [ -R-After store/update by table] |
+|  4   | `GET`      | /api/auth/file-crud/{id}      |    show      | siswa.show         | [show][-R-id-] /api/auth/file-crud/{id}      |       [ -R-id- specifict ]        |
+|  5   | `GET`      | /api/auth/file-crud/{id}/edit |    edit      | siswa.edit         | [edit][-R-id-] /api/auth/file-crud/{id}/edit |      [ -R-id-Before update ]      |
+|  7   | `DELETE`   | /api/auth/file-crud/{id}      |    destroy   | siswa.destroy      | [delete] /api/auth/file-crud/{id}            |                                   |
+|  6   | `PUT`      | /api/auth/file-crud/{id}      |    update    | siswa.update       | [PUT-update] /api/auth/file-crud/{id}        |                                   |
+|  6   | `PATCH`    | /api/auth/file-crud/{id}      |    update    | siswa.update       | [PATCH-update] /api/auth/file-crud/{id}      |                                   |
+
+
 <!-- |------|------------|-------------------------|----------|--------------------| -->
 ###### siswaku/routes/web.php   ---   nanti coba diuji pakai api.php
 ###### Route::resource('siswa','SiswaController');
